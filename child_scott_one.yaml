@@ -1,10 +1,15 @@
-
+parameters:
+- name: image
+  displayName: Pool Image
+  type: string
 
 # Release Stages
 stages:
 - stage: A
   jobs:
   - job: JA
+    pool: 
+      vmImage: ${{ parameters.image }}
     steps:
     - script: |
         echo "This is job Foo."
