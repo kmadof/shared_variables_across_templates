@@ -30,13 +30,15 @@ trigger:
       - '*'
 
 pool: 
-  vmImage: ${{ parameters.image }}
+  vmImage: ubuntu-latest
 
 
 # Release Stages
 stages:
 
 - template: child_scott_one.yaml
+  parameters:
+    image: ${{ parameters.image }}
 
 - template: child_scott_two.yaml
 
