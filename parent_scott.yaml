@@ -9,7 +9,7 @@ parameters:
   - name: big_var_01
     displayName: "this var wants to get written to then read by templates"
     type: string
-    default: '3q4w#V$X3q4w#V$X'
+    default: "3q4w#V$X3q4w#V$X"
 
 
 # CI Triggers
