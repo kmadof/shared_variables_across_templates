@@ -10,6 +10,17 @@ parameters:
     displayName: "this var wants to get written to then read by templates"
     type: string
     default: "3q4w#V$X3q4w#V$X"
+  - name: image
+    displayName: Pool Image
+    type: string
+    default: ubuntu-latest
+    values:
+    - windows-latest
+    - vs2017-win2016
+    - ubuntu-latest
+    - ubuntu-16.04
+    - macOS-latest
+    - macOS-10.14
 
 
 # CI Triggers
@@ -18,9 +29,9 @@ trigger:
     exclude:
       - '*'
 
+pool: 
+  vmImage: ${{ parameters.image }}
 
-pool:
-  vmImage: 'ubuntu-latest'
 
 # Release Stages
 stages:
